@@ -1,6 +1,10 @@
 import React from 'react';
-import {Button, Row, Col, Image, Carousel} from 'antd';
+import {Button, Row, Col, Image, Carousel, Form} from 'antd';
 import { createFromIconfontCN } from '@ant-design/icons';
+import GooglePlusOutlined from "@ant-design/icons/lib/icons/GooglePlusOutlined";
+import PhoneOutlined from "@ant-design/icons/lib/icons/PhoneOutlined";
+import {Link} from "react-router-dom";
+import Routes from "../constants/routes";
 
 
 const HomePage = () => {
@@ -21,8 +25,9 @@ const HomePage = () => {
                 <Col span={12} >
                     <h1>Bienvenido a CURES un sistema donde pordrás aprender temas de tu interés a tu ritmo.</h1>
                     <br/>
+
                     <Button type="primary" shape="round" size={"large"} >
-                        Registro Estudiante
+                        <Link to={Routes.REGISTER}>Registro Estudiante</Link>
                     </Button>
                     <br/><br/>
                     <h1 >
@@ -76,21 +81,13 @@ const HomePage = () => {
 
                 <h1>NUESTRAS REDES SOCIALES:</h1>
                 <Row>
-                    <Col span={6}>
-
-                    </Col>
-                    <Col span={6}>
-                        <Button type="primary" icon={<IconFont type="icon-facebook" />}> </Button>
-                    </Col>
-                    <Col span={6}>
-
-                    </Col>
-                    <Col span={6}>
-
+                    <Col span={12}>
+                        <Button type="primary" ><IconFont type="icon-facebook" /></Button><label> couses.ec</label><br/><br/>
+                        <Button type="primary" ><IconFont type="icon-twitter" /></Button><label> @cures_ec</label><br/><br/>
+                        <Button type="primary" ><GooglePlusOutlined /></Button><label> cures_ec@gmail.com</label><br/><br/>
+                        <Button type="primary" ><PhoneOutlined /></Button><label> 0987654321</label><br/><br/>
                     </Col>
                 </Row>
-
-
 
             </Col>
         </Row>
