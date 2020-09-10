@@ -5,17 +5,16 @@
 const publicRoutes = {
   LOGIN: '/ingreso',
   REGISTER: '/registro',
-  ARTICLES: '/articulos',
+  LOGINTEACHER: '/loginteacher',
   USERS: '/usuarios',
   USERS_ID: `/usuario/:id`,
   HOME: '/',
   ABOUT: '/acerca-de',
-  ANTD: '/antd'
+  COURSES: '/courses'
 };
 
 const privateRoutes = {
   LOGOUT: '/logout',
-  PRIVATE: '/privada',
   ARTICLE_ID: '/articulo/:id'
 };
 
