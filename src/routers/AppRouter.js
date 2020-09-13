@@ -6,6 +6,19 @@ import PrivateRoute from './PrivateRoute';
 import Routes from '../constants/routes';
 import NotFoundPage from '../pages/NotFoundPage';
 import Loading from '../components/Loading';
+import Programing from "../pages/Courses/Programing";
+import DataBase from "../pages/Courses/DataBase";
+import Security from "../pages/Courses/Security";
+import Network from "../pages/Courses/Network";
+import System from "../pages/Courses/System";
+import Algorithm from "../pages/Courses/Algorithm";
+import Architecture from "../pages/Courses/Architecture";
+import CoursesLayout from "../pages/CoursesLayout";
+import ProfileStudent from "../pages/ProfileStudent";
+import CourseStudent from "../pages/Student/CourseStudent";
+import HistorialStudent from "../pages/Student/HistorialStudent";
+import Certificate from "../pages/Student/Certificate";
+import Data from "../pages/Student/Data";
 
 /**
  * El módulo loadable (https://loadable-components.com/docs/code-splitting/)
@@ -24,9 +37,11 @@ const AsyncHome = loadable( () => import( '../pages/Index' ), loadableOptions );
 const AsyncLogin = loadable( () => import( '../pages/Login' ), loadableOptions );
 const AsyncRegister = loadable( () => import( '../pages/Register' ), loadableOptions );
 const AsyncLoginTeacher = loadable( () => import( '../pages/LoginTeacher' ), loadableOptions );
+const AsyncProfileTeacher = loadable( () => import( '../pages/ProfileTeacher' ), loadableOptions );
+const AsyncProfileStudent = loadable( () => import( '../pages/ProfileStudent' ), loadableOptions );
 const AsyncArticle = loadable( () => import( '../pages/Article' ), loadableOptions );
 const AsyncAbout = loadable( () => import( '../pages/About' ), loadableOptions );
-const AsyncCourses = loadable( () => import( '../pages/Courses' ), loadableOptions );
+const AsyncCoursesLayout = loadable( () => import( '../pages/CoursesLayout' ), loadableOptions );
 const AsyncLogout = loadable( () => import( '../pages/Logout' ), loadableOptions );
 
 
@@ -48,12 +63,72 @@ const AppRouter = () => (
     <PublicRoute path={ Routes.REGISTER } component={ AsyncRegister } />
     <PublicRoute path={ Routes.LOGINTEACHER } component={ AsyncLoginTeacher } />
     <PublicRoute path={ Routes.ABOUT } component={ AsyncAbout } />
-    <PublicRoute path={ Routes.COURSES } component={ AsyncCourses } />
+    <PublicRoute path={ Routes.COURSESLAYOUT } component={ AsyncCoursesLayout } />
+    <PublicRoute path={ Routes.PROFILETEACHER } component={ AsyncProfileTeacher } />
+    <PublicRoute path={ Routes.PROFILESTUDENT } component={ AsyncProfileStudent } />
 
     <PrivateRoute path={ Routes.ARTICLE_ID } component={ AsyncArticle } />
     <PrivateRoute path={ Routes.LOGOUT } component={ AsyncLogout } />
 
-    <Route component={ NotFoundPage } />
+
+      <Route path="/Courses/programing">
+          <CoursesLayout>
+            <Programing/>
+          </CoursesLayout>
+      </Route>
+      <Route path="/Courses/database">
+          <CoursesLayout>
+              <DataBase/>
+          </CoursesLayout>
+      </Route>
+      <Route path="/Courses/security">
+          <CoursesLayout>
+              <Security/>
+          </CoursesLayout>
+      </Route>
+      <Route path="/Courses/network">
+          <CoursesLayout>
+              <Network/>
+          </CoursesLayout>
+      </Route>
+      <Route path="/Courses/system">
+          <CoursesLayout>
+              <System/>
+          </CoursesLayout>
+      </Route>
+      <Route path="/Courses/algorithm">
+          <CoursesLayout>
+              <Algorithm/>
+          </CoursesLayout>
+      </Route>
+      <Route path="/Courses/architecture">
+          <CoursesLayout>
+              <Architecture/>
+          </CoursesLayout>
+      </Route>
+      <Route path="/Student/coursestudent">
+          <ProfileStudent>
+              <CourseStudent/>
+          </ProfileStudent>
+      </Route>
+      <Route path="/Student/historialstudent">
+          <ProfileStudent>
+              <HistorialStudent/>
+          </ProfileStudent>
+      </Route>
+      <Route path="/Student/certificate">
+          <ProfileStudent>
+              <Certificate/>
+          </ProfileStudent>
+      </Route>
+      <Route path="/Student/data">
+          <ProfileStudent>
+              <Data/>
+          </ProfileStudent>
+      </Route>
+
+       <Route component={ NotFoundPage } />
+
   </Switch>
 );
 

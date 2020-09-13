@@ -46,8 +46,8 @@ import {history} from 'react-router-dom';
 
 // const Auth = {
 //   checkAuthentication,
-//   //   login,
-//   //   logout
+  //   login,
+  //   logout
 // };
-// //
+//
 // export default Auth;

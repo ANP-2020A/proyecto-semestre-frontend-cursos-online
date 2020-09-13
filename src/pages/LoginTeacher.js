@@ -193,7 +193,7 @@ const LoginTeacher = () => {
 
                         <Form.Item>
                             <Button type='primary' htmlType='submit' className='login-form-button'>
-                                Ingresar
+                                <Link to={ Routes.PROFILETEACHER }>Ingresar</Link>
                             </Button>
                         </Form.Item>
                     </Form>
