@@ -1,19 +1,14 @@
 import React from 'react';
-import {Layout, Menu, Breadcrumb, Image} from 'antd';
+import {Layout, Menu, Breadcrumb, Image, Typography} from 'antd';
 import Programing from "./Courses/Programing";
 import {BrowserRouter, Link} from "react-router-dom";
-import {Switch,Router, Route} from "react-router";
-import DataBase from "./Courses/DataBase";
-import Security from "./Courses/Security";
-import Network from "./Courses/Network";
-import System from "./Courses/System";
-import Algorithm from "./Courses/Algorithm";
-import Architecture from "./Courses/Architecture";
 const { Header, Content, Footer } = Layout;
 
-const Courses = () => {
+const { Title } = Typography;
+
+const CoursesLayout = (props) => {
   return (
-      <BrowserRouter>
+      <>
         <h1 style={{
           textAlign: 'center',
           fontSize: 30,
@@ -49,45 +44,17 @@ const Courses = () => {
             </Menu>
           </Header>
 
-          <Switch>
-            <Route path="/Courses/programing">
-              <Programing/>
-            </Route>
-            <Route path="/Courses/database">
-              <DataBase/>
-            </Route>
-            <Route path="/Courses/security">
-              <Security/>
-            </Route>
-            <Route path="/Courses/network">
-              <Network/>
-            </Route>
-            <Route path="/Courses/system">
-              <System/>
-            </Route>
-            <Route path="/Courses/algorithm">
-              <Algorithm/>
-            </Route>
-            <Route path="/Courses/architecture">
-              <Architecture/>
-            </Route>
-
-          </Switch>
-
           <Content>
-
-            <Image
-                width={1266}
-                src="https://cdn.pixabay.com/photo/2018/03/08/05/07/training-3207841_1280.jpg"
-
-            />
+            {props.children}
           </Content>
 
-          <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
+<Title>INICIO DE CURSOS</Title>
+
+          <Footer style={{ textAlign: 'center' }}>CURES ©2020 Created by CURES</Footer>
         </Layout>
-      </BrowserRouter>
+      </>
 
   )
 };
 
-export default Courses;
+export default CoursesLayout;

@@ -58,8 +58,8 @@ const  Navigation = ( props ) => {
           <Link to={ Routes.LOGINTEACHER } style={ linkStyle }>Enseña en CURES</Link>
         </Menu.Item>
 
-        <Menu.Item key={ Routes.COURSES }>
-          <Link to={ Routes.COURSES } style={ linkStyle }>Cursos</Link>
+        <Menu.Item key={ Routes.COURSESLAYOUT }>
+          <Link to={ Routes.COURSESLAYOUT } style={ linkStyle }>Cursos</Link>
         </Menu.Item>
 
         {
@@ -75,7 +75,7 @@ const  Navigation = ( props ) => {
               </Menu.ItemGroup>
 
               <Menu.Item key={ Routes.LOGIN }>
-                <Link to={ Routes.LOGOUT } className='logout-link'>
+                <Link to={ Routes.PROFILESTUDENT } className='logout-link'>
                   {
                     isCheckingAuth
                       ? <LoadingOutlined />

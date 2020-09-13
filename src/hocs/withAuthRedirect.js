@@ -28,15 +28,27 @@ export default function withAuthRedirect( {
 } ) {
   const WithAuthRedirectWrapper = props => {
 
-    const { isCheckingAuth, isAuthenticated } = useAuth();
+    const { isCheckingAuth, isAuthenticated, currentUser } = useAuth();
     if( isCheckingAuth ) {
       return <LoadingComponent />;
     }
     if( expectedAuth !== isAuthenticated ) {
-      return <Redirect to={ {
-        pathname: location || Routes.LOGIN,
-        state: { from: props.location }
-      } } />
+      if(!isAuthenticated) {
+        if(currentUser.role === 'ROLE_STUDENT') {
+          // redirect a la pagina de studiante
+          return <Redirect to={ {
+            pathname: Routes.PROFILESTUDENT,
+            state: { from: props.location }
+          } } />
+        } else {
+          // redirect a pagina de profe
+          return <Redirect to={ {
+            pathname: Routes.PROFILETEACHER,
+            state: { from: props.location }
+          } } />
+        }
+      }
+
     }
     return <WrappedComponent { ...props } />;
   };
