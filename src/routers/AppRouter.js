@@ -19,6 +19,17 @@ import CourseStudent from "../pages/Student/CourseStudent";
 import HistorialStudent from "../pages/Student/HistorialStudent";
 import Certificate from "../pages/Student/Certificate";
 import Data from "../pages/Student/Data";
+import ProfileTeacher from "../pages/ProfileTeacher";
+import NewCourse from "../pages/Teacher/NewCourse";
+import Record from "../pages/Teacher/Record";
+import TeacherCourses from "../pages/Teacher/TeacherCourses";
+import Nivel1 from "../pages/Nivels/Nivel1";
+import Nivel2 from "../pages/Nivels/Nivel2";
+import Nivel3 from "../pages/Nivels/Nivel3";
+import Nivel4 from "../pages/Nivels/Nivel4";
+import Nivel5 from "../pages/Nivels/Nivel5";
+import Exam from "../pages/Nivels/Exam";
+
 
 /**
  * El módulo loadable (https://loadable-components.com/docs/code-splitting/)
@@ -124,6 +135,64 @@ const AppRouter = () => (
       <Route path="/Student/data">
           <ProfileStudent>
               <Data/>
+          </ProfileStudent>
+      </Route>
+      <Route path="/Teacher/newcourse">
+          <ProfileTeacher>
+              <NewCourse/>
+          </ProfileTeacher>
+      </Route>
+      <Route path="/Teacher/record">
+          <ProfileTeacher>
+              <Record/>
+          </ProfileTeacher>
+      </Route>
+      <Route path="/Teacher/teachercourses">
+          <ProfileTeacher>
+              <TeacherCourses/>
+          </ProfileTeacher>
+      </Route>
+
+      <Route path="/Nivels/nivel1">
+          <ProfileStudent>
+              <CourseStudent>
+                  <Nivel1/>
+              </CourseStudent>
+          </ProfileStudent>
+      </Route>
+      <Route path="/Nivels/nivel2">
+          <ProfileStudent>
+              <CourseStudent>
+                  <Nivel2/>
+              </CourseStudent>
+          </ProfileStudent>
+      </Route>
+      <Route path="/Nivels/nivel3">
+          <ProfileStudent>
+              <CourseStudent>
+                  <Nivel3/>
+              </CourseStudent>
+          </ProfileStudent>
+      </Route>
+      <Route path="/Nivels/nivel4">
+          <ProfileStudent>
+              <CourseStudent>
+                  <Nivel4/>
+              </CourseStudent>
+          </ProfileStudent>
+      </Route>
+      <Route path="/Nivels/nivel5">
+          <ProfileStudent>
+              <CourseStudent>
+                  <Nivel5/>
+              </CourseStudent>
+          </ProfileStudent>
+      </Route>
+      <Route path="/Nivels/exam">
+          <ProfileStudent>
+              <CourseStudent>
+                  <Exam/>
+              </CourseStudent>
           </ProfileStudent>
       </Route>
 

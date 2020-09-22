@@ -23,7 +23,7 @@ const HomePage = () => {
 
                 <br/>
                 <Col span={12} >
-                    <h1>Bienvenido a CURES un sistema donde pordrás aprender temas de tu interés a tu ritmo.</h1>
+                    <h1>Bienvenido a CURES un sistema donde podrás aprender temas de tu interés a tu ritmo.</h1>
                     <br/>
 
                     <Button type="primary" shape="round" size={"large"} >

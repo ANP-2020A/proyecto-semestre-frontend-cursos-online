@@ -6,7 +6,7 @@ import Routes from '../constants/routes';
 import Navigation from './Navigation';
 import { Layout, Row, Col, Button, Popover } from 'antd';
 import { FacebookOutlined, InstagramOutlined, GithubOutlined, MailOutlined, WhatsAppOutlined } from '@ant-design/icons';
-import logo from '../images/logo-menta.png';
+import logo from '../images/cures.PNG';
 import moment from 'moment';
 import { Link } from 'react-router-dom';
 
@@ -34,7 +34,7 @@ const MainLayout = props => {
               <Row type='flex' justify='space-between' align='bottom'>
                 <Col xs={ 24 } md={ 6 } className='logo-wrapper'>
                   <a href={ process.env.REACT_APP_DOMAIN }>
-                    <img className='logo' src={ logo } alt='Grupo Menta' /></a>
+                    <img className='logo' src={ logo } alt='CURES' /></a>
                 </Col>
 
                 <Col md={ 14 } align='right' className='main-menu'>
@@ -61,21 +61,6 @@ const MainLayout = props => {
                   </Popover>
                 </Col>
 
-                <Col xs={ 22 } md={ 4 } className='logos-social-header' align='right'>
-                  <a href='https://www.facebook.com'
-                     target='_blank'
-                     rel='noopener noreferrer'
-                     style={ {
-                       marginLeft: 30,
-                       marginRight: 30
-                     } }>
-                    <FacebookOutlined />
-                  </a>
-
-                  <a href='https://www.instagram.com' target='_blank' rel='noopener noreferrer'>
-                    <InstagramOutlined />
-                  </a>
-                </Col>
               </Row>
             </Header>
           </Col>
@@ -93,7 +78,7 @@ const MainLayout = props => {
         <Footer className='footer'>
           <Row>
             <Col xs={ { span: 24 } } md={ 8 } className='logo-blanco'>
-              LOGO
+              <img className='logo' src={ logo } alt='CURES' />
             </Col>
 
             <Col xs={ {
@@ -106,6 +91,10 @@ const MainLayout = props => {
                  } }
                  className='logo-menta'>
               Elaborado por: <br />
+              - Amagua Jhoel <br />
+              - Chinacalle Karla <br />
+              - Curipoma David <br />
+              - Salgado Luis <br />
 
             </Col>
 
@@ -119,9 +108,9 @@ const MainLayout = props => {
                  } }
                  className='contact-links'>
               <p><strong>Contáctanos</strong></p>
-              <p><MailOutlined /> <a href='mailto:chalo.salvador@grupomenta.com'>cures-epn@gmail.com</a></p>
-              <p><WhatsAppOutlined /> <a href='https://wa.me/593984794808' target='_blank' rel='noopener noreferrer'>+593
-                9-8765-4321</a></p>
+              <p><MailOutlined /> <a href='mailto:jhoelamagua_1997@hotmail.com'>cures-epn@gmail.com</a></p>
+              <p><WhatsAppOutlined /> <a href='https://wa.me/593979391147' target='_blank' rel='noopener noreferrer'>+593
+                9-7939-1147</a></p>
               <p><GithubOutlined /> <a href='https://github.com/chalosalvador'
                                        target='_blank'
                                        rel='noopener noreferrer'>@curesepn</a>

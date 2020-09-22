@@ -48,8 +48,6 @@ const CoursesLayout = (props) => {
             {props.children}
           </Content>
 
-<Title>INICIO DE CURSOS</Title>
-
           <Footer style={{ textAlign: 'center' }}>CURES ©2020 Created by CURES</Footer>
         </Layout>
       </>

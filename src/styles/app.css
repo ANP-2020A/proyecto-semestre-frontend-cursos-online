@@ -164,8 +164,9 @@ code {
     /*text-align: center;*/
     padding: 30px 20px;
     min-height: 200px;
-    background-color: #2e2a25ee;
-    color: #ffffff;
+    max-height: 80px;
+    background-color: #001529;
+    color: white;
 }
 
 .footer a {
@@ -238,9 +239,9 @@ code {
     }
 
     .footer {
-        padding: 30px 100px;
+        padding: 20px 100px 20px 100px;
         min-height: 200px;
-        background-color: #2e2a25ee;
+        background: #001529;
         color: #ffffff;
     }
 

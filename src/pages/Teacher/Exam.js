@@ -1,5 +1,5 @@
 import React from 'react';
-import {Typography, Form, Input, Button, Checkbox, Row, Col, Card,} from 'antd';
+import {Typography, Form, Input, Button, Checkbox, Row, Col, Card, Select,} from 'antd';
 import {BrowserRouter, Link} from "react-router-dom";
 
 const { TextArea } = Input;
@@ -30,12 +30,21 @@ const Exam = () => {
                 <br/>
 
                 <TextArea placeholder="Informacion adicional" rows={2} /><br/><br/>
-                <p>Seleccione la respuesta correcta de la pregunta</p>
-                <Checkbox onChange={onChange}>Opcion 1</Checkbox><br/>
-                <Checkbox onChange={onChange}>Opcion 2</Checkbox><br/>
-                <Checkbox onChange={onChange}>Opcion 3</Checkbox><br/>
-                <Checkbox onChange={onChange}>Opcion 4</Checkbox>
+                <p>Cree las opciones de la pregunta y seleccione la correcta</p>
 
+                        <Input placeholder="Ingrese la respuesta 1" style={{width:'300px'}}/><br/><br/>
+                        <Input placeholder="Ingrese la respuesta 2" style={{width:'300px'}}/><br/><br/>
+                        <Input placeholder="Ingrese la respuesta 3" style={{width:'300px'}}/><br/><br/>
+                        <Input placeholder="Ingrese la respuesta 4" style={{width:'300px'}}/><br/><br/>
+
+                <Title level={5}>Seleccione la respuesta correcta</Title>
+
+                <Select style= {{width:'300px'}} >
+                    <Select.Option value="demo1">Respuesta 1</Select.Option>
+                    <Select.Option value="demo2">Respuesta 2</Select.Option>
+                    <Select.Option value="demo3">Respuesta 3</Select.Option>
+                    <Select.Option value="demo4">Respuesta 4</Select.Option>
+                </Select>
                 <br/><br/>
 
                 <Button type="primary">
