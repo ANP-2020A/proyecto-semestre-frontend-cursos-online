@@ -1,11 +1,17 @@
-import React, {useState} from 'react';
-import {Layout, Table,Typography} from 'antd';
+import React from 'react';
+import {Layout, Table, Typography} from "antd";
 
-const { Content } = Layout;
+
 const { Title } = Typography;
-
+const { Content } = Layout;
 
 const columns = [
+    {
+        title: 'Estudiante',
+        dataIndex: 'estudiante',
+        key: 'estudiante',
+        render: text => <a>{text}</a>,
+    },
     {
         title: 'Materia',
         dataIndex: 'materia',
@@ -49,11 +55,11 @@ const columns = [
     }
 ];
 
-const HistorialStudent = () => {
+const Record = () => {
 
     return (
         <>
-            <Layout style={{ padding: '0 24px 24px', background:'white' }}>
+            <Layout style={{ padding: '0 24px 24px' }}>
                 <Content
                     className="site-layout-background"
                     style={{
@@ -63,15 +69,15 @@ const HistorialStudent = () => {
 
                     }}
                 >
-                    <Title className='subtitulos'  style={{
+                    <Title className='subtitulos' level={2} style={{
                         textAlign:'center', color:'#8F0002'
-                    }}>Historial Acádemico</Title><br/>
+                    }}>Historial</Title><br/>
                     <Table columns={columns} dataSource={0} />
                 </Content>
             </Layout>
-            </>
+        </>
 
     );
 };
 
-export default HistorialStudent;
+export default Record;

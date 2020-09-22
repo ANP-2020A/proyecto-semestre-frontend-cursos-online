@@ -15,8 +15,8 @@ const Nivels = () =>{
             <br/><br/>
             <Row style={{
                 backgroundColor:'#3C526D',
-                padding:'20px 20px',
-                margin:'0 -25px'
+                padding:'20px 50px',
+                margin:'0px 50px 0px -50px'
             }}>
                 <Col span={24}>
                     <Title level={4} style={{
@@ -24,7 +24,7 @@ const Nivels = () =>{
                     }}>Nivel 1<br/></Title>
 
                     <br/><Input placeholder="Tema" style={{
-                    backgroundColor:'#D27070', width:'250px', color:'#8B3838', height:'40px'
+                    backgroundColor:'#D27070', width:'225px', color:'#8B3838', height:'40px'
                 }}/><br/>
                     <br/>
                     <TextArea placeholder="Descripción del nivel" rows={7} />
