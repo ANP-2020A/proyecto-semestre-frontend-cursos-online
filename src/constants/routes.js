@@ -11,12 +11,12 @@ const publicRoutes = {
   USERS_ID: `/usuario/:id`,
   HOME: '/',
   ABOUT: '/acerca-de',
-
+  PROFILETEACHER: '/profileteacher',
+  PROFILESTUDENT: '/profilestudent',
 };
 
 const privateRoutes = {
-  PROFILETEACHER: '/profileteacher',
-  PROFILESTUDENT: '/profilestudent',
+
   LOGOUT: '/logout',
   ARTICLE_ID: '/articulo/:id'
 };

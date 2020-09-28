@@ -9,6 +9,8 @@ import { Menu } from 'antd';
 import { LogoutOutlined, LoginOutlined, LoadingOutlined, UserOutlined } from '@ant-design/icons';
 import { Link, useLocation } from 'react-router-dom';
 import '../styles/navigation.css';
+import ProfileStudent from "../pages/ProfileStudent";
+import ProfileTeacher from "../pages/ProfileTeacher";
 
 const linkStyle = {};
 
@@ -20,6 +22,7 @@ const  Navigation = ( props ) => {
     collapsed: false,
     openKeys: []
   } );
+
   const { isAuthenticated, isCheckingAuth, currentUser } = useAuth();
 
   React.useEffect( () => {
@@ -67,17 +70,14 @@ const  Navigation = ( props ) => {
             ? <Menu.SubMenu icon={ <UserOutlined /> } title={ currentUser && currentUser.name }>
               <Menu.ItemGroup>
                 <Menu.Item key="1">
-                    {/*{
-                    currentUser.type='student'
-                      ? <Link to={Routes.PROFILESTUDENT}>Perfil</Link>
-                        : <Link to={Routes.PROFILETEACHER}>Perfil</Link>
-                  }*/}
-
+                  <Link to={ Routes.LOGIN } className='logout-link'>
+                    Perfil
+                  </Link>
                 </Menu.Item>
               </Menu.ItemGroup>
 
-              <Menu.Item key={ Routes.LOGOUT }>
-                <Link to={ Routes.HOME } className='logout-link'>
+              <Menu.Item key={ Routes.LOGIN }>
+                <Link to={ Routes.LOGOUT } className='logout-link'>
                   {
                     isCheckingAuth
                       ? <LoadingOutlined />

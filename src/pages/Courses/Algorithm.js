@@ -1,17 +1,25 @@
 import React from 'react';
 import {Image} from "antd";
+import ShowError from "../../components/ShowError";
+import CourseList from "../../components/CourseList";
+import {useCourseList} from "../../data/useCourseList";
 
 const Algorithm = () => {
+
+    const courses = useCourseList();
 
     return(
         <>
             <h1 className='subtitulos'>
                 ALGORITMOS
             </h1>
-            <Image
-                width={1266}
-                src="https://cdn.pixabay.com/photo/2020/03/17/07/21/macbook-4939260_1280.jpg"
-            />
+            {
+                courses.isLoading
+                    ? 'Cargando...'
+                    : courses.isError
+                    ? <ShowError error={ courses.isError } />
+                    : <CourseList courses={ courses.courses } />
+            }
         </>
     );
 };

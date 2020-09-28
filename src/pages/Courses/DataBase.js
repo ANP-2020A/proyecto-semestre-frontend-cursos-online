@@ -1,17 +1,25 @@
 import React from 'react';
 import {Image} from "antd";
+import ShowError from "../../components/ShowError";
+import CourseList from "../../components/CourseList";
+import {useCourseList} from "../../data/useCourseList";
 
 const DataBase = () => {
+
+    const courses = useCourseList();
 
     return(
         <>
             <h1 className='subtitulos'>
                 BASE DE DATOS
             </h1>
-            <Image
-                width={1266}
-                src="https://cdn.pixabay.com/photo/2016/06/03/13/57/digital-marketing-1433427_1280.jpg"
-            />
+            {
+                courses.isLoading
+                    ? 'Cargando...'
+                    : courses.isError
+                    ? <ShowError error={ courses.isError } />
+                    : <CourseList courses={ courses.courses } />
+            }
         </>
     );
 };

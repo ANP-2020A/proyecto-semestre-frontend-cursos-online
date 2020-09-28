@@ -5,6 +5,7 @@ import {BrowserRouter, Link} from "react-router-dom";
 import ProfileOutlined from "@ant-design/icons/lib/icons/ProfileOutlined";
 import FileAddOutlined from "@ant-design/icons/lib/icons/FileAddOutlined";
 import AuditOutlined from "@ant-design/icons/lib/icons/AuditOutlined";
+import {useAuth} from "../providers/Auth";
 const { Header, Content, Footer, Sider } = Layout;
 const { SubMenu } = Menu;
 
@@ -15,6 +16,8 @@ const { Search } = Input;
 
 const ProfileTeacher = (props) => {
 
+    const { isAuthenticated, currentUser } = useAuth();
+
     return (
       <>
           <Layout style={{marginTop:'-50px'}}>
@@ -22,7 +25,14 @@ const ProfileTeacher = (props) => {
                   <div className="logo" />
                   <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['']} >
                       <Divider orientation="left" >
-                          <Title level={3} style={{color:'white'}}>Name Teacher</Title>
+                          <Title level={3} style={{color:'white'}} >Profesor:<span> </span>
+                              {
+                                  isAuthenticated
+                                      ?currentUser.name
+                                      :'cargando'
+                              }
+                          </Title>
+
                       </Divider>
                   </Menu>
 

@@ -6,6 +6,7 @@ import Cookies from 'js-cookie';
 
 const Logout = () => {
   const { setAuthenticated, setCurrentUser } = useAuth();
+
   useEffect( () => {
     async function doLogout() {
       try {
@@ -23,7 +24,7 @@ const Logout = () => {
 
     doLogout();
   }, [ setAuthenticated ] );
-  return <p>Salio de la sesion</p>;
+  return <p>Cerro su sesión</p>;
 };
 
 export default withAuth( Logout, '/' );
