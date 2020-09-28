@@ -33,8 +33,8 @@ export default function withAuthRedirect( {
       return <LoadingComponent />;
     }
     if( expectedAuth !== isAuthenticated ) {
-      if(!isAuthenticated) {
-        if(currentUser.role === 'ROLE_STUDENT') {
+      if(isAuthenticated) {
+        if(currentUser.type === 'student') {
           // redirect a la pagina de studiante
           return <Redirect to={ {
             pathname: Routes.PROFILESTUDENT,

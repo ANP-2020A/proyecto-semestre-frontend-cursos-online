@@ -1,6 +1,6 @@
 import React from 'react';
 import CommentsList from '../components/CommentsList';
-import { useArticle } from '../data/useArticle';
+import { useCourse } from '../data/useCourse';
 import ShowError from '../components/ShowError';
 import withAuth from '../hocs/withAuth';
 import { useParams } from 'react-router-dom';
@@ -9,7 +9,7 @@ import { Skeleton } from 'antd';
 
 const ArticlePage = () => {
   let { id } = useParams();
-  const article = useArticle( id );
+  const article = useCourse( id );
   const comments = useArticleComments( id );
 
   return (

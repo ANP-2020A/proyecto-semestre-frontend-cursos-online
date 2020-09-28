@@ -47,7 +47,7 @@ const LoginTeacher = () => {
     return(
         <>
             <Row>
-                <Col span={12}>
+                <Col span={24}>
                     <Title className= 'subtitulos' style={ { textAlign: 'center' } }>¿Quiéres formar parte de CURES?</Title>
                     <h1> Si quieres ser parte de nuestro equipo y quieres compartir
                         tus conocimientos, esta es tu oportunidad, llena este formulario
@@ -129,7 +129,7 @@ const LoginTeacher = () => {
                         </Col>
                     </Row>
                 </Col>
-                <Col span={2}>
+                {/*<Col span={2}>
 
                 </Col>
                 <Col span={9} style={{
@@ -197,7 +197,7 @@ const LoginTeacher = () => {
                             </Button>
                         </Form.Item>
                     </Form>
-                </Col>
+                </Col>*/}
             </Row>
         </>
     )

@@ -10,9 +10,9 @@ import { Link } from 'react-router-dom';
 
 const { TextArea } = Input;
 
-const CommentsList = ( { comments, articleId } ) => {
+const CommentsList = ( { courses, user_id } ) => {
 
-  console.log( 'props', comments );
+  console.log( 'props', courses );
   const [ submitting, setSubmitting ] = useState( false );
 
   const handleSubmit = async( values ) => {
@@ -22,17 +22,17 @@ const CommentsList = ( { comments, articleId } ) => {
     try {
 
       // setValue( '' );
-      comments.mutate( {
+      courses.mutate( {
         data: [
           {}, // to show the skeleton for new comment
-          ...comments.comments,
+          ...courses.comments,
         ]
       }, false );
-      await API.post( `/articles/${ articleId }/comments`, {
+      await API.post( `/users/${ user_id }/courses`, {
         text: values.text,
-        article_id: articleId
+        user_id: user_id
       } );
-      comments.mutate(); // get updated data
+      courses.mutate(); // get updated data
       setSubmitting( false );
     } catch( error ) {
       console.log( 'error', error );
@@ -46,52 +46,21 @@ const CommentsList = ( { comments, articleId } ) => {
     }
   };
 
-  const Editor = ( { onSubmit, submitting } ) => {
-    const [ form ] = Form.useForm();
-
-    return (
-      <Form
-        form={ form }
-        name='form_comment'
-        onFinish={ handleSubmit }>
-        <Form.Item name='text'
-                   rules={ [
-                     {
-                       required: true,
-                       message: 'Ingresa el texto de tu comentario'
-                     }
-                   ] }>
-          <TextArea rows={ 4 } />
-        </Form.Item>
-        <Form.Item>
-          <Button htmlType='submit' loading={ submitting } type='primary'>
-            Enviar comentario
-          </Button>
-        </Form.Item>
-      </Form>
-    );
-  };
-
   return (
     <>
-      <Comment
-        avatar={ <Avatar src='https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png' alt='Han Solo' /> }
-        content={ <Editor onSubmit={ handleSubmit } submitting={ submitting } /> }
-      />
-
       <List
         className='comment-list'
-        header={ `${ comments.comments && comments.comments.length } comentarios` }
+        header={ `${ courses.courses && courses.courses.length } cursos` }
         itemLayout='horizontal'
-        dataSource={ processCommentsData( comments.comments ) }
+        dataSource={ processCommentsData( courses.courses ) }
         renderItem={ ( item ) => {
-          if( item.author ) {
+          if( item.name ) {
             return (
               <Comment
                 // actions={ item.actions }
-                author={ item.author }
-                content={ item.content }
-                datetime={ item.datetime }
+                name={ item.name }
+                description={ item.description }
+                type={ item.type }
               />
             );
           } else {
@@ -105,18 +74,14 @@ const CommentsList = ( { comments, articleId } ) => {
 
 export default CommentsList;
 
-const processCommentsData = ( comments ) => {
-  return comments.map( ( comment ) => {
-    console.log( 'comment', comment );
-    if( comment.text ) {
+const processCommentsData = ( courses ) => {
+  return courses.map( ( course ) => {
+    console.log( 'comment', course );
+    if( courses.text ) {
       return ({
         // actions: [ <span key='comment-list-reply-to-0'>Reply to</span> ],
-        author: <Link to={ Routes.USERS_ID }>{ comment.user_data.name }</Link>,
-        avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
-        content: <p>{ comment.text }</p>,
-        datetime: <Tooltip title={ moment( comment.created_at ).format( 'YYYY-MM-DD HH:mm:ss' ) }>
-          <span>{ moment( comment.created_at ).fromNow() }</span>
-        </Tooltip>,
+        author: <Link to={ Routes.USERS_ID }>{ course.user_data.name }</Link>,
+        content: <p>{ course.text }</p>,
       });
     } else {
       return {};

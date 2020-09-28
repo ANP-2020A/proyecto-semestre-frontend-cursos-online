@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import API from '../data';
 import { translateMessage } from '../utils/translateMessage';
-import ArticleList from '../components/ArticleList';
+import CourseList from '../components/CourseList';
 import ArticleForm from '../components/ArticleForm';
 import { Button, message, Skeleton, Row, Col } from 'antd';
 import { useAuth } from '../providers/Auth';
@@ -92,7 +92,7 @@ const Articles = ( props ) => {
           />
       }
 
-      <ArticleList categories={ categories.categories } />
+      <CourseList categories={ categories.categories } />
     </div>
   );
 };

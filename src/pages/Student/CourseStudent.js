@@ -15,7 +15,7 @@ const CourseStudent = (props) => {
         <>
             <div style={{background:'white'}} >
             <Title className='subtitulos' style={{
-                textAlign:'center', color:'#8F0002'
+                textAlign:'center', color:'#8f0002'
             }}>TITULO DEL CURSO</Title><br/>
             <Layout className="layout" style={{background:'white'}}>
                 <Header style={ {
