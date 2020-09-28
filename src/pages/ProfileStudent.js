@@ -6,6 +6,7 @@ import NotificationOutlined from "@ant-design/icons/lib/icons/NotificationOutlin
 import ProfileOutlined from "@ant-design/icons/lib/icons/ProfileOutlined";
 import AuditOutlined from "@ant-design/icons/lib/icons/AuditOutlined";
 import CheckCircleOutlined from "@ant-design/icons/lib/icons/CheckCircleOutlined";
+import {useAuth} from "../providers/Auth";
 
 
 const { SubMenu } = Menu;
@@ -14,18 +15,25 @@ const { Search } = Input;
 const { Title } = Typography;
 
 const ProfileStudent = (props) => {
+
+    const { isAuthenticated, currentUser } = useAuth();
+
     return (
         <>
-
         <Layout style={{marginTop:'-50px'}}>
             <Header className="header">
                 <div className="logo" />
                 <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['2']} >
                     <Divider orientation="left" >
-                        <Title level={3} style={{color:'white'}} >Name Student</Title>
+                        <Title level={3} style={{color:'white'}} >Estudiante:<span> </span>
+                            {
+                                isAuthenticated
+                                    ?currentUser.name
+                                    :'cargando'
+                            }
+                        </Title>
                     </Divider>
                 </Menu>
-
             </Header>
 
             <Layout className="layout" >

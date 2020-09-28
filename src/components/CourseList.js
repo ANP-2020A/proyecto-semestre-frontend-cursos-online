@@ -44,19 +44,22 @@ const CourseList = (props) => {
         return (
             <>
                 <Row justify='center' gutter={30}>
+
                     {
                         courses.map((course, i) => (
                             <Col xs={24} sm={12} md={8} style={{marginBottom: 30}} key={i}>
-                                {course.name
+                                {
+                                    course.name
                                     ? <Card
                                         title={course.name}
                                         cover={
                                             <img alt={course.name}
-                                                 src={`https://cdn.pixabay.com/photo/2020/09/11/00/11/landscape-5561678_960_720.jpg`}/>}
+                                                 src={`${course.image}`}/>}
                                     >
 
-                                        <Text type='secondary'>{course.created_at}</Text>
-                                        <p> {course.description} <br/>{course.type}</p>
+                                        <Text type='secondary'>Creado: {course.created_at}</Text>
+                                        <p><h3>Descripcion del curso: </h3> {course.description} </p>
+                                        <p><h3>Categoria: </h3>{course.type}</p>
 
                                     </Card>
                                     : <div style={{textAlign: 'center'}}>

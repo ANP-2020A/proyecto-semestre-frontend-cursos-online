@@ -1,17 +1,25 @@
 import React from 'react';
 import {Image} from "antd";
+import ShowError from "../../components/ShowError";
+import CourseList from "../../components/CourseList";
+import {useCourseList} from "../../data/useCourseList";
 
 const Architecture = () => {
+
+    const courses = useCourseList();
 
     return(
         <>
             <h1 className='subtitulos'>
                 ARQUITECTURA
             </h1>
-            <Image
-                width={1266}
-                src="https://cdn.pixabay.com/photo/2014/09/20/13/52/board-453758_1280.jpg"
-            />
+            {
+                courses.isLoading
+                    ? 'Cargando...'
+                    : courses.isError
+                    ? <ShowError error={ courses.isError } />
+                    : <CourseList courses={ courses.courses } />
+            }
         </>
     );
 };
