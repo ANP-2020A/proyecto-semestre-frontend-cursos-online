@@ -4,7 +4,7 @@
 import useSWR from 'swr';
 import API from './index';
 
-export const useArticle = ( id, options= {} ) => {
+export const useCourse = (id, options= {} ) => {
   const { data, error } = useSWR( `/articles/${ id }`, API.fetcher, options );
 
   return {

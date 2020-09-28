@@ -6,16 +6,17 @@ const publicRoutes = {
   LOGIN: '/ingreso',
   REGISTER: '/registro',
   LOGINTEACHER: '/loginteacher',
-  PROFILETEACHER: '/profileteacher',
-  PROFILESTUDENT: '/profilestudent',
   COURSESLAYOUT: '/courseslayout',
   USERS: '/usuarios',
   USERS_ID: `/usuario/:id`,
   HOME: '/',
   ABOUT: '/acerca-de',
+
 };
 
 const privateRoutes = {
+  PROFILETEACHER: '/profileteacher',
+  PROFILESTUDENT: '/profilestudent',
   LOGOUT: '/logout',
   ARTICLE_ID: '/articulo/:id'
 };

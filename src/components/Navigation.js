@@ -65,17 +65,19 @@ const  Navigation = ( props ) => {
         {
           isAuthenticated
             ? <Menu.SubMenu icon={ <UserOutlined /> } title={ currentUser && currentUser.name }>
-              <Menu.ItemGroup title='Item 1'>
-                <Menu.Item key='setting:1'>Option 1</Menu.Item>
-                <Menu.Item key='setting:2'>Option 2</Menu.Item>
-              </Menu.ItemGroup>
-              <Menu.ItemGroup title='Item 2'>
-                <Menu.Item key='setting:3'>Option 3</Menu.Item>
-                <Menu.Item key='setting:4'>Option 4</Menu.Item>
+              <Menu.ItemGroup>
+                <Menu.Item key="1">
+                    {/*{
+                    currentUser.type='student'
+                      ? <Link to={Routes.PROFILESTUDENT}>Perfil</Link>
+                        : <Link to={Routes.PROFILETEACHER}>Perfil</Link>
+                  }*/}
+
+                </Menu.Item>
               </Menu.ItemGroup>
 
-              <Menu.Item key={ Routes.LOGIN }>
-                <Link to={ Routes.PROFILESTUDENT } className='logout-link'>
+              <Menu.Item key={ Routes.LOGOUT }>
+                <Link to={ Routes.HOME } className='logout-link'>
                   {
                     isCheckingAuth
                       ? <LoadingOutlined />

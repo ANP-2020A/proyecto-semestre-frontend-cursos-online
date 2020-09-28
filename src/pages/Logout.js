@@ -23,7 +23,7 @@ const Logout = () => {
 
     doLogout();
   }, [ setAuthenticated ] );
-  return <p>Logging out...</p>;
+  return <p>Salio de la sesion</p>;
 };
 
 export default withAuth( Logout, '/' );
